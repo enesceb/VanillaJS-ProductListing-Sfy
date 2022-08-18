@@ -3,7 +3,7 @@ export class UI {
     this.navBarTab = document.getElementById("v-pills-tab");
     this.globalCategories = [];
   }
-  
+
   addAllCategoriesToUI(categories) {
     let shortCategory = [];
     let result = "";
@@ -36,10 +36,10 @@ export class UI {
         let product = products[this.globalCategories[catagoryIndex]][index];
         productResult += `
             <div class="col">
-            <div class="card h-100 product-card">
-              <img src="${product.image}" class="card-img-top bg-grey" alt="...">
+            <div class="card h-100 product-card p-3">
+              <img src="${product.image}" class="card-img-top bg-grey owl-lazy"  data-src=${product.image}>
               <div class="card-body">
-                <h5 class="card-title fw-semibold">${
+                <h5 class="card-title fw-bold ">${
                   product.name.slice(0, 32) + "..."
                 }</h5>
                 <div class="card-body rounded-3 product-card-color">
@@ -65,6 +65,7 @@ owlCourselOptions() {
   $(".owl-carousel").owlCarousel({
     loop: true,
     margin: 10,
+    lazyLoad:true,
     responsiveClass: true,
     responsive: {
       0: {
