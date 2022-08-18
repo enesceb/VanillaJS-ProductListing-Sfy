@@ -18,7 +18,7 @@ export class UI {
 
     for (let index = 0; index < shortCategory.length; index++) {
       const element = shortCategory[index];
-      result += ` <button class="nav-link fw-bold col-lg-12 col-md-4 col-sm-8 col-11 d-block d-sm-flex align-items-start "  id="v-pills-0${[
+      result += ` <button class="nav-link fw-bold col-lg-12 col-md-4 col-sm-8 col-11 d-block d-sm-flex align-items-start " style="color: #828282;"  id="v-pills-0${[
         index,
       ]}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-${[
         index,
