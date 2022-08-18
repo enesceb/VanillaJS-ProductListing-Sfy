@@ -18,7 +18,7 @@ export class UI {
 
     for (let index = 0; index < shortCategory.length; index++) {
       const element = shortCategory[index];
-      result += ` <button class="nav-link fw-bold w-100 d-flex align-items-start " id="v-pills-0${[
+      result += ` <button class="nav-link fw-bold col-lg-12 col-md-4 col-sm-8 col-11 d-block d-sm-flex align-items-start "  id="v-pills-0${[
         index,
       ]}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-${[
         index,
@@ -47,7 +47,7 @@ export class UI {
                 <p class="card-text fw-bolder">${product.priceText}</p>
                 </div>
                 <p class="card-text p-2"><small class="text-muted">${
-                  product.params.shippingFee ? "Ücretsiz Kargo" : ""
+                  product.params.shippingFee ? `<i class="fa-solid fa-truck fa-2xs me-2" style="color: green;"></i> Ücretsiz Kargo` : ""
                 }</small></p>
                 <a href="#" class="btn btn-primary d-block spet">Sepete Ekle</a>
               </div>
@@ -66,10 +66,9 @@ owlCourselOptions() {
   $(document).ready(function(){
     $(".owl-carousel").owlCarousel();
   });
- 
   $(".owl-carousel").owlCarousel({
     loop: true,
-    margin: 10,
+    margin: 0,
     dots:false,
     lazyLoad:true,
     responsiveClass: true,
@@ -78,18 +77,18 @@ owlCourselOptions() {
     responsive: {
       0: {
         items: 1,
-        nav: true,
+        nav: false,
       },
       600: {
         items: 2,
         nav: false,
       },
-      1000: {
-        items: 2,
+      1300: {
+        items: 3,
         nav: true,
       },
-      1200: {
-        items: 3,
+      1760: {
+        items: 4,
         nav: true,
         loop: false,
       },

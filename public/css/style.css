@@ -21,21 +21,11 @@ body {
 .product-card-color{
 	background-color: #f2f2f2!important;
 }
-.blue-thing{
-	
-	height:10px;
-	width:2px;
-	background-color: blue;
-	margin-right: 20px
-}
-.spad {
-	flex-direction: row-reverse;
 
-}
 
 .owl-prev, .owl-next {
-	width: 50px;
-	height: 50px;
+	width: 35px;
+	height: 35px;
 	border-radius: 100%!important;
 	position: absolute;
 	top: 30%;
@@ -43,15 +33,11 @@ body {
 	display: block !important;
 	border:4px solid black;
 }
-.owl-prev { left: -40px; }
-.owl-next { right: -35px; }
+.owl-prev { left: -50px; }
+.owl-next { right: -15px; }
 i.fa-solid{
 	transform: scale(1.8);
 }
-
-
-
-
 
 
 
