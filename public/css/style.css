@@ -1,0 +1,67 @@
+html,
+body {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	height: 100%;
+	width: 100%;
+	background-color: #f1f1f1;
+	font-family: "Cairo", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+.nav-text{
+	font-weight: 600;
+}
+.product-card {
+	width: 300.75px;
+    margin-right: 10px;
+}
+.product-card-color{
+	background-color: #f2f2f2!important;
+}
+.blue-thing{
+	height:20px;
+	width:2px;
+	background-color: blue;
+	margin-right: 20px
+}
+.spad {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------- Responsive Media Quaries -----------------------------*/
+
+@media only screen and (min-width: 1200px) {
+	.container {
+		max-width: 1170px;
+	}
+}
+
+
+
+/* Tablet Device = 768px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .header .container {
+		position: relative;
+	}
+}
+
+/* Wide Mobile = 480px */
+@media only screen and (max-width: 767px) {
+    .header .container {
+        position: relative;
+    }
+}
