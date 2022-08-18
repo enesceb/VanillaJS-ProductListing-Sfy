@@ -23,13 +23,14 @@ export class UI {
       ]}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-${[
         index,
       ]}-tab" type="button" role="tab">${element}</button>`;
+     
     }
     this.navBarTab.innerHTML = result;
+     
   }
 
   addProductsToUI(products){
-    console.log(products)
-    for (let catagoryIndex = 0; catagoryIndex < 6; catagoryIndex++) {
+      for (let catagoryIndex = 0; catagoryIndex < 6; catagoryIndex++) {
       let productResult = "";
       let tabContent = document.getElementById(`v-pills-${catagoryIndex}-tab`);
       for (let index = 0; index < 20; index++) {
@@ -48,12 +49,16 @@ export class UI {
                 <p class="card-text p-2"><small class="text-muted">${
                   product.params.shippingFee ? "Ücretsiz Kargo" : ""
                 }</small></p>
+                <a href="#" class="btn btn-primary d-block spet">Sepete Ekle</a>
               </div>
             </div>
           </div>
         `;
       }
       tabContent.innerHTML = productResult;
+      $('.spet').click(function(){
+          $('.toast').toast('show')
+      });
     }
 }
 
@@ -65,8 +70,11 @@ owlCourselOptions() {
   $(".owl-carousel").owlCarousel({
     loop: true,
     margin: 10,
+    dots:false,
     lazyLoad:true,
     responsiveClass: true,
+    nav: true,
+    navText : ['<i class="fa-solid fa-chevron-left"></i>','<i class="fa-solid fa-chevron-right"></i>'],
     responsive: {
       0: {
         items: 1,
