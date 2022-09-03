@@ -7,13 +7,11 @@ const ui = new UI()
 
 eventListeners();
 
-
 function eventListeners(){
     document.addEventListener("DOMContentLoaded", getAllProduct)
 }
 
 function getAllProduct(){
- 
     request.getData()
     .then((result) => {
     ui.addAllCategoriesToUI(result[0][0].params.userCategories)

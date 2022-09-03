@@ -5,20 +5,13 @@ export class UI {
   }
 
   addAllCategoriesToUI(categories) {
-    let shortCategory = [];
     let result = "";
     this.globalCategories = categories;
 
-    categories.map((e) => {
-      if (e.length > 8) {
-        e = e.substring(0, 24) + "...";
-        shortCategory.push(e);
-      }
-    });
 
-    for (let index = 0; index < shortCategory.length; index++) {
-      const element = shortCategory[index];
-      result += ` <button class="nav-link fw-bold col-lg-12 col-md-4 col-sm-8 col-11 d-block d-sm-flex align-items-start " style="color: #828282;"  id="v-pills-0${[
+    for (let index = 0; index < categories.length; index++) {
+      const element = categories[index];
+      result += ` <button class="nav-link fw-bold col-lg-12 col-md-4 col-sm-8 col-11 d-block d-sm-flex align-items-start " style="color: #828282; overflow: hidden; white-space: nowrap;"  id="v-pills-0${[
         index,
       ]}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-${[
         index,
@@ -30,10 +23,12 @@ export class UI {
   }
 
   addProductsToUI(products){
-      for (let catagoryIndex = 0; catagoryIndex < 6; catagoryIndex++) {
+    
+      for (let catagoryIndex = 0; catagoryIndex < this.globalCategories.length; catagoryIndex++) {
       let productResult = "";
       let tabContent = document.getElementById(`v-pills-${catagoryIndex}-tab`);
-      for (let index = 0; index < 20; index++) {
+      
+      for (let index = 0; index < products[this.globalCategories[catagoryIndex]].length; index++) {
         let product = products[this.globalCategories[catagoryIndex]][index];
         productResult += `
             <div class="col">
@@ -41,7 +36,7 @@ export class UI {
               <img src="${product.image}" class="card-img-top bg-grey owl-lazy"  data-src=${product.image}>
               <div class="card-body">
                 <h5 class="card-title fw-bold ">${
-                  product.name.slice(0, 32) + "..."
+                  product.name.slice(0, 32)
                 }</h5>
                 <div class="card-body rounded-3 product-card-color">
                 <p class="card-text fw-bolder">${product.priceText}</p>
@@ -49,14 +44,14 @@ export class UI {
                 <p class="card-text p-2"><small class="text-muted">${
                   product.params.shippingFee ? `<i class="fa-solid fa-truck fa-2xs me-2" style="color: green;"></i> Ücretsiz Kargo` : ""
                 }</small></p>
-                <a href="#" class="btn btn-primary d-block spet">Sepete Ekle</a>
+                <a href="#" class="btn btn-primary d-block toaster">Sepete Ekle</a>
               </div>
             </div>
           </div>
         `;
       }
       tabContent.innerHTML = productResult;
-      $('.spet').click(function(){
+      $('.toaster').click(function(){
           $('.toast').toast('show')
       });
     }
